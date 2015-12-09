@@ -1,0 +1,6 @@
+GET   /who                 controllers.user.LoginController.who
+GET   /login               controllers.user.LoginController.login
+GET   /logout              controllers.user.LoginController.logout
+
+# Map static resources from the /public folder to the /assets URL path
+GET   /user/assets/*file   controllers.Assets.versioned(path="/public", file: Asset)

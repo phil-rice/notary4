@@ -1,0 +1,16 @@
+@(title: String, cssList: List[org.validoc.notary.common.Css]=List())(content: Html)(implicit css: org.validoc.notary.common.Css)
+@import org.validoc.notary.common.Css
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>@title</title>
+    @for(Css(call) <-cssList :+ css){
+          <link rel="stylesheet" media="screen" href='@call' />
+      }
+  </head>
+  <body>
+	<div class='mainMenu'>Menu goes here</div>
+	@content
+	<div class='bottomRow'>Bottom row goes here</div>
+  </body>
+</html>

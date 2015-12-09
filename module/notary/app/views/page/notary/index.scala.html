@@ -1,0 +1,12 @@
+@(digest: Option[String], notaryForm: Form[String])(implicit messages: Messages, css: org.validoc.notary.common.Css)
+@import template.notary._
+@import controllers.notary._
+@main("Validoc"){
+   @if(digest.isDefined){
+   	   <div class='digestText'><span class='digestTitle'>@messages("digest.title")</span> <span class='digestValue'>@digest</span></div>
+   }
+   @helper.form(action = routes.NotaryController.postText()) {
+      @helper.textarea(field = notaryForm("notary.text"), args = 'rows -> 3, 'cols -> 50)
+      <button type='submit' >Submit</button>
+   }
+} 
