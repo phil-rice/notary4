@@ -13,8 +13,8 @@ lazy val root = (project in file(".")).
                 settings(
                    libraryDependencies ++= rootDependencies
                 ).enablePlugins(PlayScala).
-                dependsOn( user, notary, utilities).
-                aggregate( user, notary, utilities)
+                dependsOn( user, notary, common  % "test->test;compile->compile", utilities).
+                aggregate( user, notary, common, utilities)
 				  
 lazy val notary = (project in file("module/notary")).
                 settings(commonSettings: _*).

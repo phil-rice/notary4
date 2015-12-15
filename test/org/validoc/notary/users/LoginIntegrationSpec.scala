@@ -5,10 +5,10 @@ import play.api.mvc._
 import play.api.libs.json._
 import play.api.test._
 import play.api.test.Helpers._
-import scala.concurrent.Future
 import org.scalatestplus.play._
+import org.validoc.notary.common.BrowserSpec
 
-class LoginIntegrationSpec extends PlaySpec with OneServerPerSuite with OneBrowserPerTest with ChromeFactory {
+class LoginIntegrationSpec extends BrowserSpec with OneServerPerSuite with OneBrowserPerTest with ChromeFactory {
 
   "The login page" must {
     "diplay 'Logged In as" in {
